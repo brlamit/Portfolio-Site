@@ -35,103 +35,107 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleTheme }) => {
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+      className={`fixed top-0 w-full z-50 transition-all duration-500 ease-in-out ${
         isScrolled
           ? isDarkMode
-            ? 'bg-gradient-to-r from-gray-900/95 to-gray-800/95 backdrop-blur-md shadow-xl border-b border-gray-700/50'
-            : 'bg-gradient-to-r from-white/95 to-gray-100/95 backdrop-blur-md shadow-xl border-b border-gray-200/50'
+            ? 'bg-gray-900/80 backdrop-blur-md border-b border-gray-700'
+            : 'bg-white/80 backdrop-blur-md border-b border-gray-200'
           : 'bg-transparent'
-      }`}
+      } animate-fadeIn`}
     >
-      <nav className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div
-            className={`text-3xl font-extrabold tracking-tight transition-colors duration-300 transform hover:scale-105 ${
-              isDarkMode ? 'text-blue-300' : 'text-blue-600'
-            }`}
-          >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-              Amit Baral
-            </span>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-10">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className={`relative font-semibold text-lg transition-all duration-300 group ${
-                  isDarkMode ? 'text-gray-200' : 'text-gray-800'
-                }`}
-              >
-                {item.name}
-                <span
-                  className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
-                    isDarkMode ? 'bg-blue-400' : 'bg-blue-600'
-                  }`}
-                ></span>
-              </button>
-            ))}
-            
-            {/* Theme Toggle Button */}
-            <button
-              onClick={toggleTheme}
-              className={`p-2 rounded-full transition-all duration-300 transform hover:scale-110 hover:rotate-12 ${
-                isDarkMode
-                  ? 'bg-gray-800/50 text-yellow-300 hover:bg-gray-700/50'
-                  : 'bg-gray-200/50 text-blue-600 hover:bg-gray-300/50'
-              }`}
-              title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-            >
-              {isDarkMode ? <Sun size={22} /> : <Moon size={22} />}
-            </button>
-          </div>
-
-          {/* Mobile Menu Button and Theme Toggle */}
-          <div className="md:hidden flex items-center space-x-4">
-            <button
-              onClick={toggleTheme}
-              className={`p-2 rounded-full transition-all duration-300 transform hover:scale-110 ${
-                isDarkMode
-                  ? 'bg-gray-800/50 text-yellow-300 hover:bg-gray-700/50'
-                  : 'bg-gray-200/50 text-blue-600 hover:bg-gray-300/50'
-              }`}
-              title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-            >
-              {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
-            
-            <button
-              className={`p-2 rounded-full transition-all duration-300 transform hover:scale-110 ${
-                isDarkMode ? 'text-gray-200 hover:text-blue-400' : 'text-gray-800 hover:text-blue-600'
-              }`}
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
-            </button>
-          </div>
+      <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        {/* Logo */}
+        <div
+          onClick={() => scrollToSection('#home')}
+          className={`text-3xl font-extrabold cursor-pointer hover:scale-105 transition-transform duration-300 ${
+            isDarkMode
+              ? 'bg-gradient-to-r from-blue-400 via-gray-300 to-gray-400'
+              : 'bg-gradient-to-r from-blue-600 via-gray-700 to-black'
+          } bg-clip-text text-transparent hover:opacity-80`}
+        >
+          Amit Baral
         </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div
-            className={`md:hidden absolute top-full left-0 w-full shadow-2xl border-t transition-all duration-300 transform ${
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center space-x-10">
+          {navItems.map((item) => (
+            <button
+              key={item.name}
+              onClick={() => scrollToSection(item.href)}
+              className={`group text-base font-medium transition duration-300 relative ${
+                isDarkMode
+                  ? 'text-white hover:text-blue-300'
+                  : 'text-gray-800 hover:text-blue-600'
+              }`}
+            >
+              {item.name}
+              <span
+                className={`absolute left-0 bottom-0 w-0 h-0.5 group-hover:w-full transition-all duration-500 ${
+                  isDarkMode
+                    ? 'bg-gradient-to-r from-blue-400 to-purple-400'
+                    : 'bg-gradient-to-r from-blue-600 to-purple-600'
+                }`}
+              ></span>
+            </button>
+          ))}
+
+          {/* Theme Toggle */}
+          <button
+            onClick={toggleTheme}
+            className={`ml-6 p-2 rounded-full transition-all duration-300 transform hover:scale-110 ${
               isDarkMode
-                ? 'bg-gradient-to-b from-gray-900 to-gray-800 border-gray-700/50'
-                : 'bg-gradient-to-b from-white to-gray-100 border-gray-200/50'
-            } animate-slideDown`}
+                ? 'bg-gray-800 text-yellow-300 hover:bg-gray-700'
+                : 'bg-gray-200 text-blue-600 hover:bg-gray-300'
+            }`}
+            aria-label={isDarkMode ? 'Light Mode' : 'Dark Mode'}
           >
-            <div className="py-6">
+            {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation Button */}
+        <div className="md:hidden flex items-center space-x-4">
+          <button
+            onClick={toggleTheme}
+            className={`p-2 rounded-full transition-all duration-300 transform hover:scale-110 ${
+              isDarkMode
+                ? 'bg-gray-800 text-yellow-300 hover:bg-gray-700'
+                : 'bg-gray-200 text-blue-600 hover:bg-gray-300'
+            }`}
+          >
+            {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className={`p-2 rounded-full transition-all duration-300 transform hover:scale-110 ${
+              isDarkMode ? 'text-white' : 'text-gray-800'
+            }`}
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          >
+            {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile Menu Sidebar */}
+      {isMenuOpen && (
+        <>
+          <div
+            className={`fixed top-0 right-0 h-full w-64 z-50 shadow-lg transition-transform duration-300 ${
+              isDarkMode
+                ? 'bg-gray-900 text-white border-l border-gray-700'
+                : 'bg-white text-gray-900 border-l border-gray-200'
+            }`}
+          >
+            <div className="pt-24 px-6 flex flex-col space-y-5">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className={`block w-full text-left px-8 py-4 font-semibold text-lg transition-all duration-300 transform hover:translate-x-2 ${
+                  className={`text-left text-base font-medium py-2 px-3 rounded-md hover:translate-x-2 transition-all ${
                     isDarkMode
-                      ? 'text-gray-200 hover:text-blue-400 hover:bg-gray-800/50'
-                      : 'text-gray-800 hover:text-blue-600 hover:bg-gray-50/50'
+                      ? 'hover:bg-gray-800 hover:text-blue-300'
+                      : 'hover:bg-gray-100 hover:text-blue-600'
                   }`}
                 >
                   {item.name}
@@ -139,12 +143,17 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleTheme }) => {
               ))}
             </div>
           </div>
-        )}
-      </nav>
+          {/* Mobile Menu Overlay */}
+          <div
+            className="fixed inset-0 bg-black/40 z-40 md:hidden"
+            onClick={() => setIsMenuOpen(false)}
+          ></div>
+        </>
+      )}
 
-      {/* Inline CSS for Animation */}
-      <style >{`
-        @keyframes slideDown {
+      {/* Animation */}
+      <style>{`
+        @keyframes fadeIn {
           from {
             opacity: 0;
             transform: translateY(-10px);
@@ -154,8 +163,8 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleTheme }) => {
             transform: translateY(0);
           }
         }
-        .animate-slideDown {
-          animation: slideDown 0.3s ease-out;
+        .animate-fadeIn {
+          animation: fadeIn 0.4s ease-in-out;
         }
       `}</style>
     </header>

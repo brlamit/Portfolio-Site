@@ -9,18 +9,11 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  // Load theme preference from localStorage
-  useEffect(() => {
+  // Initialize isDarkMode to true for dark mode by default
+  const [isDarkMode, setIsDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      setIsDarkMode(savedTheme === 'dark');
-    } else {
-      // Default to system preference
-      setIsDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
-    }
-  }, []);
+    return savedTheme ? savedTheme === 'dark' : true; // Default to true (dark mode) if no saved theme
+  });
 
   // Save theme preference and apply to document
   useEffect(() => {

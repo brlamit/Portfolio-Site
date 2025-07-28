@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Code, Database, Zap, Users, Award, Coffee, Heart, Star, Sparkles, Target, Lightbulb, Server } from 'lucide-react';
+import aboutimg from '../assets/img.jpg'; // Correct path for the image
 
 interface AboutProps {
   isDarkMode: boolean;
@@ -248,7 +249,7 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
                         }`}
                       >
                         <img
-                          src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=400"
+                          src={aboutimg}
                           alt="Amit Baral - Laravel Developer"
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                         />
