@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ExternalLink, Github, Calendar, Star, TrendingUp, Users, Award, Zap, Eye } from 'lucide-react';
+import dacademe from '../assets/dacademe.png'; // Correct path for the image
+import ecommerse from '../assets/ecommerse.png'; // Correct path for the image
 
 interface ProjectsProps {
   isDarkMode: boolean;
@@ -30,30 +32,30 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
 
   const projects = [
     {
-      title: 'EcoTrack - Sustainability Dashboard',
+      title: 'D-ACADEME - Sustainability Dashboard',
       description:
-        'A comprehensive Laravel web application for tracking environmental impact and sustainability metrics for businesses. Features real-time data visualization, goal setting, and progress tracking with advanced reporting.',
-      image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['Laravel', 'Vue.js', 'MySQL', 'Chart.js', 'AWS'],
+        'D-Academe is a decentralized learning platform offering live classes, course purchases with Web3 tokens, and secure streaming via Livepeer Studio, ensuring an interactive and transparent educational experience.',
+      image: dacademe,
+      technologies: [ 'PHP', 'Web3.js', 'Livepeer', 'MySQL', 'Chart.js', 'Git'],
       liveUrl: '#',
-      githubUrl: '#',
+      githubUrl: 'https://github.com/brlamit/D-Academe',
       year: '2024',
-      status: 'Live',
+      status: 'Featured',
       category: 'Web App',
       stats: { users: '2.5K', rating: 4.8, growth: '+45%' },
       featured: true,
     },
     {
-      title: 'TaskFlow - Project Management Tool',
+      title: 'D-Commerse Site - Project Management Tool',
       description:
-        'Modern project management platform built with Laravel and Vue.js. Features team collaboration, time tracking, advanced reporting, and real-time notifications for remote teams.',
-      image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['Laravel', 'Vue.js', 'MySQL', 'Redis', 'Tailwind'],
-      liveUrl: '#',
-      githubUrl: '#',
+        'D-Commerse Site is a decentralized commerce platform built using React and Solidity. It integrates with blockchain technology to provide a secure and efficient way to buy and sell items using a custom ERC20 token. The site includes features for managing a wallet, buying tokens, purchasing items, managing a cart, and displaying item specifications.',
+      image: ecommerse,
+      technologies: ['Ethereum', 'React.js', 'Solidity', 'Web3.js', 'Tailwind'],
+      liveUrl: 'https://d-commerse-site.vercel.app/',
+      githubUrl: 'https://github.com/brlamit/D-Commerse-Site',
       year: '2023',
       status: 'Featured',
-      category: 'SaaS',
+      category: 'Web App',
       stats: { users: '1.8K', rating: 4.9, growth: '+62%' },
       featured: true,
     },
@@ -327,7 +329,7 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                       hoveredProject === index ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                     }`}
                   >
-                    <div
+                    {/* <div
                       className={`flex justify-between items-center backdrop-blur-lg rounded-lg p-4 border ${
                         isDarkMode ? 'bg-gray-900/80 border-gray-600/40' : 'bg-white/80 border-gray-200/50'
                       }`}
@@ -351,7 +353,7 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                           {project.stats.growth}
                         </span>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
 
                   <div

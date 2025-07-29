@@ -43,11 +43,11 @@ const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
       color: isDarkMode ? "from-blue-600 to-indigo-600" : "from-blue-700 to-indigo-700",
       bgColor: isDarkMode ? "bg-gray-800/50" : "bg-white/80",
       skills: [
-        { name: "Laravel", level: 95, color: "bg-gradient-to-r from-red-500 to-orange-500" },
-        { name: "PHP", level: 92, color: "bg-gradient-to-r from-purple-600 to-blue-600" },
-        { name: "Node.js", level: 85, color: "bg-gradient-to-r from-green-600 to-green-400" },
-        { name: "MySQL", level: 90, color: "bg-gradient-to-r from-blue-600 to-blue-400" },
-        { name: "PostgreSQL", level: 82, color: "bg-gradient-to-r from-blue-700 to-blue-500" }
+        { name: "Laravel", level: 80, color: "bg-gradient-to-r from-red-500 to-orange-500" },
+        { name: "PHP", level: 70, color: "bg-gradient-to-r from-purple-600 to-blue-600" },
+        // { name: "Node.js", level: 85, color: "bg-gradient-to-r from-green-600 to-green-400" },
+        { name: "MySQL", level: 85, color: "bg-gradient-to-r from-blue-600 to-blue-400" },
+        // { name: "PostgreSQL", level: 82, color: "bg-gradient-to-r from-blue-700 to-blue-500" }
       ]
     },
     {
@@ -56,11 +56,11 @@ const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
       color: isDarkMode ? "from-indigo-600 to-blue-600" : "from-indigo-700 to-blue-700",
       bgColor: isDarkMode ? "bg-gray-700/50" : "bg-blue-50",
       skills: [
-        { name: "JavaScript", level: 88, color: "bg-gradient-to-r from-yellow-500 to-orange-500" },
-        { name: "React", level: 85, color: "bg-gradient-to-r from-blue-500 to-cyan-500" },
-        { name: "Vue.js", level: 80, color: "bg-gradient-to-r from-green-500 to-emerald-500" },
-        { name: "Tailwind CSS", level: 90, color: "bg-gradient-to-r from-teal-500 to-cyan-500" },
-        { name: "Bootstrap", level: 87, color: "bg-gradient-to-r from-purple-500 to-blue-500" }
+        { name: "JavaScript", level: 50, color: "bg-gradient-to-r from-yellow-500 to-orange-500" },
+        { name: "React", level: 40, color: "bg-gradient-to-r from-blue-500 to-cyan-500" },
+        { name: "Vue.js", level: 20, color: "bg-gradient-to-r from-green-500 to-emerald-500" },
+        { name: "Tailwind CSS", level: 75, color: "bg-gradient-to-r from-teal-500 to-cyan-500" },
+        { name: "Bootstrap", level: 80, color: "bg-gradient-to-r from-purple-500 to-blue-500" }
       ]
     },
     {
@@ -70,10 +70,11 @@ const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
       bgColor: isDarkMode ? "bg-gray-800/30" : "bg-indigo-50",
       skills: [
         { name: "Git", level: 92, color: "bg-gradient-to-r from-orange-600 to-red-500" },
-        { name: "Docker", level: 78, color: "bg-gradient-to-r from-blue-600 to-blue-400" },
-        { name: "AWS", level: 75, color: "bg-gradient-to-r from-yellow-600 to-orange-500" },
-        { name: "Redis", level: 80, color: "bg-gradient-to-r from-red-500 to-pink-500" },
-        { name: "Elasticsearch", level: 70, color: "bg-gradient-to-r from-yellow-500 to-green-500" }
+        { name: "Postman", level: 65, color: "bg-gradient-to-r from-blue-500 to-cyan-500" },
+        // { name: "Docker", level: 78, color: "bg-gradient-to-r from-blue-600 to-blue-400" },
+        // { name: "AWS", level: 75, color: "bg-gradient-to-r from-yellow-600 to-orange-500" },
+        // { name: "Redis", level: 80, color: "bg-gradient-to-r from-red-500 to-pink-500" },
+        // { name: "Elasticsearch", level: 70, color: "bg-gradient-to-r from-yellow-500 to-green-500" }
       ]
     }
   ];
@@ -111,7 +112,7 @@ const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
     {
       icon: <Cpu className="w-8 h-8" />,
       title: "API Development",
-      description: "RESTful APIs, GraphQL, and real-time communication systems",
+      description: "RESTful APIs, and real-time communication systems",
       color: isDarkMode ? "from-purple-500 to-pink-500" : "from-purple-600 to-pink-600"
     }
   ];
@@ -320,36 +321,36 @@ const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
 
           {/* Certifications section */}
           <div className={`transform transition-all duration-1000 delay-600 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <h3 className={`text-3xl font-bold mb-12 text-center ${
+            {/* <h3 className={`text-3xl font-bold mb-12 text-center ${
               isDarkMode ? 'text-white' : 'text-gray-900'
             }`}>
               Certifications & <span className={`text-transparent bg-clip-text ${
                 isDarkMode ? 'bg-gradient-to-r from-blue-400 to-indigo-400' : 'bg-gradient-to-r from-blue-700 to-indigo-700'
               }`}>Achievements</span>
-            </h3>
+            </h3> */}
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { 
-                  name: "Laravel", 
-                  cert: "Certified Laravel Developer", 
-                  color: "from-red-500 to-orange-500", 
-                  icon: <Server className="w-8 h-8" />,
-                  badge: "Expert Level"
-                },
-                { 
-                  name: "AWS", 
-                  cert: "Cloud Practitioner", 
-                  color: "from-yellow-500 to-orange-500", 
-                  icon: <Cloud className="w-8 h-8" />,
-                  badge: "Certified"
-                },
-                { 
-                  name: "PHP", 
-                  cert: "Advanced PHP Developer", 
-                  color: "from-purple-500 to-blue-500", 
-                  icon: <Code className="w-8 h-8" />,
-                  badge: "Advanced"
-                }
+                // { 
+                //   name: "Laravel", 
+                //   cert: "Certified Laravel Developer", 
+                //   color: "from-red-500 to-orange-500", 
+                //   icon: <Server className="w-8 h-8" />,
+                //   badge: "Expert Level"
+                // },
+                // { 
+                //   name: "AWS", 
+                //   cert: "Cloud Practitioner", 
+                //   color: "from-yellow-500 to-orange-500", 
+                //   icon: <Cloud className="w-8 h-8" />,
+                //   badge: "Certified"
+                // },
+                // { 
+                //   name: "PHP", 
+                //   cert: "Advanced PHP Developer", 
+                //   color: "from-purple-500 to-blue-500", 
+                //   icon: <Code className="w-8 h-8" />,
+                //   badge: "Advanced"
+                // }
               ].map((cert, index) => (
                 <div 
                   key={index}

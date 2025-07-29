@@ -29,9 +29,9 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
             }, 25);
           };
 
-          animateCounter('projects', 30);
-          animateCounter('clients', 15);
-          animateCounter('experience', 3);
+          animateCounter('projects', 5);
+          animateCounter('clients', 5);
+          animateCounter('experience', 1);
         }
       },
       { threshold: 0.3 }
@@ -45,34 +45,34 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
   }, []);
 
   const highlights = [
-    {
-      icon: <Code className="w-8 h-8" />,
-      title: 'Laravel Development',
-      description: 'Building robust, scalable web applications using Laravel framework with modern PHP practices and clean architecture',
-      color: isDarkMode ? 'from-blue-500 to-indigo-500' : 'from-blue-600 to-indigo-600',
-      bgPattern: isDarkMode ? 'bg-gray-900/30' : 'bg-blue-50/50',
-    },
-    {
-      icon: <Database className="w-8 h-8" />,
-      title: 'Database Design',
-      description: 'Designing efficient database schemas and optimizing queries for high-performance applications',
-      color: isDarkMode ? 'from-indigo-500 to-blue-500' : 'from-indigo-600 to-blue-600',
-      bgPattern: isDarkMode ? 'bg-gray-800/30' : 'bg-indigo-50/50',
-    },
-    {
-      icon: <Server className="w-8 h-8" />,
-      title: 'API Development',
-      description: 'Creating RESTful APIs and microservices that power modern web and mobile applications',
-      color: isDarkMode ? 'from-blue-600 to-indigo-600' : 'from-blue-700 to-indigo-700',
-      bgPattern: isDarkMode ? 'bg-gray-900/20' : 'bg-blue-100/50',
-    },
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: 'Team Collaboration',
-      description: 'Working effectively with cross-functional teams to deliver exceptional results on time',
-      color: isDarkMode ? 'from-indigo-600 to-blue-600' : 'from-indigo-700 to-blue-700',
-      bgPattern: isDarkMode ? 'bg-gray-800/20' : 'bg-indigo-100/50',
-    },
+    // {
+    //   icon: <Code className="w-8 h-8" />,
+    //   title: 'Laravel Development',
+    //   description: 'Building robust, scalable web applications using Laravel framework with modern PHP practices and clean architecture',
+    //   color: isDarkMode ? 'from-blue-500 to-indigo-500' : 'from-blue-600 to-indigo-600',
+    //   bgPattern: isDarkMode ? 'bg-gray-900/30' : 'bg-blue-50/50',
+    // },
+    // {
+    //   icon: <Database className="w-8 h-8" />,
+    //   title: 'Database Design',
+    //   description: 'Designing efficient database schemas and optimizing queries for high-performance applications',
+    //   color: isDarkMode ? 'from-indigo-500 to-blue-500' : 'from-indigo-600 to-blue-600',
+    //   bgPattern: isDarkMode ? 'bg-gray-800/30' : 'bg-indigo-50/50',
+    // },
+    // {
+    //   icon: <Server className="w-8 h-8" />,
+    //   title: 'API Development',
+    //   description: 'Creating RESTful APIs and microservices that power modern web and mobile applications',
+    //   color: isDarkMode ? 'from-blue-600 to-indigo-600' : 'from-blue-700 to-indigo-700',
+    //   bgPattern: isDarkMode ? 'bg-gray-900/20' : 'bg-blue-100/50',
+    // },
+    // {
+    //   icon: <Users className="w-8 h-8" />,
+    //   title: 'Team Collaboration',
+    //   description: 'Working effectively with cross-functional teams to deliver exceptional results on time',
+    //   color: isDarkMode ? 'from-indigo-600 to-blue-600' : 'from-indigo-700 to-blue-700',
+    //   bgPattern: isDarkMode ? 'bg-gray-800/20' : 'bg-indigo-100/50',
+    // },
   ];
 
   const stats = [
@@ -279,13 +279,13 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
                     >
                       Laravel Developer
                     </p>
-                    <p
+                    {/* <p
                       className={`font-medium text-center mb-4 ${
                         isDarkMode ? 'text-gray-400' : 'text-gray-600'
                       }`}
                     >
                       @ XAV Technology
-                    </p>
+                    </p> */}
                     <p
                       className={`text-center text-sm ${
                         isDarkMode ? 'text-gray-400' : 'text-gray-600'
@@ -340,15 +340,15 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
                       isDarkMode ? 'text-gray-300' : 'text-gray-600'
                     }`}
                   >
-                    I'm a passionate Laravel developer at{' '}
-                    <span
+                    I'm a passionate Laravel developer {' '}
+                    {/* <span
                       className={`font-semibold ${
                         isDarkMode ? 'text-blue-300' : 'text-blue-600'
                       }`}
                     >
                       XAV Technology
-                    </span>
-                    , crafting scalable web applications that drive business success. With over 3 years of full-stack experience, I specialize in modern PHP frameworks and innovative solutions.
+                    </span> */}
+                     crafting scalable web applications that drive business success.  I specialize in modern PHP frameworks and innovative solutions.
                   </p>
                   <p
                     className={`text-lg leading-relaxed animate-fade-in-up delay-900 font-light ${
@@ -361,7 +361,7 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
               </div>
 
               {/* Core values */}
-              <div className="grid grid-cols-1 gap-4">
+              {/* <div className="grid grid-cols-1 gap-4">
                 <h4
                   className={`text-xl font-bold mb-4 tracking-tight ${
                     isDarkMode ? 'text-white' : 'text-gray-900'
@@ -404,7 +404,7 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
                     </div>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
 
