@@ -27,23 +27,23 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
   }, []);
 
   const experiences = [
-    // {
-    //   title: 'Laravel Developer',
-    //   company: 'XAV Technology',
-    //   location: 'Kathmandu, Nepal',
-    //   duration: '2022 - Present',
-    //   type: 'Full-time',
-    //   description:
-    //     'Currently developing robust web applications using Laravel framework, implementing RESTful APIs, and collaborating with cross-functional teams to deliver high-quality software solutions for diverse clients.',
-    //   achievements: [
-    //     'Building and maintaining Laravel applications serving thousands of users',
-    //     'Implementing modern PHP practices and clean architecture patterns',
-    //     'Developing RESTful APIs and integrating third-party services',
-    //     'Collaborating with frontend developers and designers for seamless user experiences',
-    //   ],
-    //   technologies: ['Laravel', 'PHP', 'MySQL', 'Vue.js', 'JavaScript', 'Git'],
-    //   current: true,
-    // },
+    {
+      title: 'Laravel Developer',
+      company: 'XAV Technology',
+      location: 'Pokhara, Nepal',
+      duration: '2025 - Present',
+      type: 'Full-time',
+      description:
+        'Currently developing robust web applications using Laravel framework, implementing RESTful APIs, and collaborating with cross-functional teams to deliver high-quality software solutions for diverse clients.',
+      achievements: [
+        'Building and maintaining Laravel applications serving thousands of users',
+        'Implementing modern PHP practices and clean architecture patterns',
+        'Developing RESTful APIs and integrating third-party services',
+        'Collaborating with frontend developers and designers for seamless user experiences',
+      ],
+      technologies: ['Laravel', 'PHP', 'MySQL', 'Vue.js', 'JavaScript', 'Git'],
+      current: true,
+    },
     // {
     //   title: 'Web Developer',
     //   company: 'Freelance Projects',

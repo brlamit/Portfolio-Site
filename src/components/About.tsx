@@ -97,13 +97,13 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
       suffix: '',
       color: isDarkMode ? 'from-blue-600 to-indigo-600' : 'from-blue-700 to-indigo-700',
     },
-    {
-      icon: <Star className="w-7 h-7" />,
-      label: 'Client Rating',
-      value: 4.9,
-      suffix: '/5',
-      color: isDarkMode ? 'from-indigo-600 to-blue-600' : 'from-indigo-700 to-blue-700',
-    },
+    // {
+    //   icon: <Star className="w-7 h-7" />,
+    //   label: 'Client Rating',
+    //   value: 4.9,
+    //   suffix: '/5',
+    //   color: isDarkMode ? 'from-indigo-600 to-blue-600' : 'from-indigo-700 to-blue-700',
+    // },
   ];
 
   const values = [
@@ -291,7 +291,7 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
                         isDarkMode ? 'text-gray-400' : 'text-gray-600'
                       }`}
                     >
-                      📍 Kathmandu, Nepal
+                      📍 Pokhara, Nepal
                     </p>
                   </div>
                 </div>

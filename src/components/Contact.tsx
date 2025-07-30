@@ -128,14 +128,14 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
     {
       name: 'GitHub',
       icon: <Github className="w-6 h-6" />,
-      url: 'https://github.com/baralamit',
+      url: 'https://github.com/brlamit',
       color: isDarkMode ? 'hover:text-gray-200' : 'hover:text-gray-700',
       bgColor: isDarkMode ? 'hover:bg-gray-700/50' : 'hover:bg-gray-100',
     },
     {
       name: 'LinkedIn',
       icon: <Linkedin className="w-6 h-6" />,
-      url: 'https://linkedin.com/in/baralamit',
+      url: 'https://www.linkedin.com/in/brlamit',
       color: 'hover:text-blue-400',
       bgColor: isDarkMode ? 'hover:bg-blue-900/30' : 'hover:bg-blue-100/80',
     },
@@ -150,8 +150,8 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
 
   const quickStats = [
     { label: 'Response Time', value: '< 24h', icon: <Clock className="w-5 h-5" /> },
-    { label: 'Projects Completed', value: '30+', icon: <CheckCircle className="w-5 h-5" /> },
-    { label: 'Client Satisfaction', value: '100%', icon: <MessageCircle className="w-5 h-5" /> },
+    { label: 'Projects Completed', value: '5+', icon: <CheckCircle className="w-5 h-5" /> },
+    // { label: 'Client Satisfaction', value: '100%', icon: <MessageCircle className="w-5 h-5" /> },
   ];
 
   return (

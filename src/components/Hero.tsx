@@ -13,6 +13,7 @@ import {
 import profileimg from '../assets/myimage.jpg';
 import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
+import amitbaralcv from '../assets/CV-Amit-Baral.pdf';
 
 interface HeroProps {
   isDarkMode: boolean;
@@ -43,9 +44,9 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
   ];
 
   const socialLinks = [
-    { Icon: Github, href: 'https://github.com/baralamit', label: 'GitHub', delay: 0 },
-    { Icon: Linkedin, href: 'https://linkedin.com/in/baralamit', label: 'LinkedIn', delay: 200 },
-    { Icon: Mail, href: 'mailto:contact@baralamit.com.np', label: 'Email', delay: 400 },
+    { Icon: Github, href: 'https://github.com/brlamit', label: 'GitHub', delay: 0 },
+    { Icon: Linkedin, href: 'https://www.linkedin.com/in/brlamit', label: 'LinkedIn', delay: 200 },
+    { Icon: Mail, href: 'mailto:baralamit881@gmail.com', label: 'Email', delay: 400 },
   ];
 
   return (
@@ -266,27 +267,27 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
               </motion.div>
 
               {/* Main Title */}
-                <h1
-                  className={`text-5xl md:text-7xl font-extrabold tracking-tight mb-4 leading-tight ${
-                    isDarkMode ? 'text-white' : 'text-gray-900'
-                  }`}
-                >
-                  <Typewriter
-                    options={{
-                      strings: ['Amit Baral'],
-                      autoStart: true,
-                      loop: true,
-                      cursor: '',
-                      delay: 100,
-                      deleteSpeed: 75,
-                      wrapperClassName: `inline-block bg-clip-text text-transparent bg-[length:300%_100%] animate-text-shimmer ${
-                        isDarkMode
-                          ? 'bg-gradient-to-r from-blue-200 via-indigo-200 to-blue-300'
-                          : 'bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800'
-                      }`
-                    }}
-                  />
-                </h1>
+              <h1
+                className={`text-5xl md:text-7xl font-extrabold tracking-tight mb-4 leading-tight ${
+                  isDarkMode ? 'text-white' : 'text-gray-900'
+                }`}
+              >
+                <Typewriter
+                  options={{
+                    strings: ['Amit Baral'],
+                    autoStart: true,
+                    loop: true,
+                    cursor: '',
+                    delay: 100,
+                    deleteSpeed: 75,
+                    wrapperClassName: `inline-block bg-clip-text text-transparent bg-[length:300%_100%] animate-text-shimmer ${
+                      isDarkMode
+                        ? 'bg-gradient-to-r from-blue-200 via-indigo-200 to-blue-300'
+                        : 'bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800'
+                    }`
+                  }}
+                />
+              </h1>
 
               {/* Decorative Elements */}
               <div
@@ -323,14 +324,14 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
               </p>
 
               {/* Description */}
-                <p
+              <p
                 className={`text-lg md:text-xl mb-10 max-w-2xl leading-relaxed ${
                   isDarkMode ? 'text-gray-300' : 'text-gray-600'
                 }`}
-                >
+              >
                 Passionate full stack developer specializing in crafting robust web applications with modern technologies. 
                 Focused on building scalable, user-centric solutions that deliver real business value through clean code and innovative approaches.
-                </p>
+              </p>
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-12">
@@ -372,8 +373,8 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
                 </button>
 
                 <a
-                  href="/resume.pdf"
-                  download
+                  href={amitbaralcv}
+                  download="Amit_Baral_CV.pdf"
                   className={`group px-8 py-4 font-semibold rounded-2xl transition-transform duration-300 transform hover:scale-105 shadow-xl ${
                     isDarkMode
                       ? 'bg-gradient-to-r from-gray-800 to-slate-800 hover:from-gray-700 hover:to-slate-700 text-gray-300'

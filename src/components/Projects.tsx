@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { ExternalLink, Github, Calendar, Star, TrendingUp, Users, Award, Zap, Eye } from 'lucide-react';
 import dacademe from '../assets/dacademe.png'; // Correct path for the image
 import ecommerse from '../assets/ecommerse.png'; // Correct path for the image
+import weather from '../assets/weather.png'; // Correct path for the image
 
 interface ProjectsProps {
   isDarkMode: boolean;
@@ -59,20 +60,20 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
       stats: { users: '1.8K', rating: 4.9, growth: '+62%' },
       featured: true,
     },
-    // {
-    //   title: 'NepalTech - Tech Community Platform',
-    //   description:
-    //     'Social platform connecting tech professionals in Nepal. Built with Laravel, features job board, event management, mentorship matching, and knowledge sharing forums with real-time chat.',
-    //   image: 'https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=600',
-    //   technologies: ['Laravel', 'React', 'MySQL', 'WebSocket', 'Bootstrap'],
-    //   liveUrl: '#',
-    //   githubUrl: '#',
-    //   year: '2023',
-    //   status: 'Popular',
-    //   category: 'Community',
-    //   stats: { users: '5.2K', rating: 4.7, growth: '+38%' },
-    //   featured: false,
-    // },
+    {
+      title: 'Weather - Mobile App',
+      description:
+        'Weather app providing real-time weather updates and forecasts. Built with React Native, it features location-based services, a user-friendly interface.',
+      image: weather,
+      technologies: ['React Native', 'Node.js', 'Express', 'Axios', 'Socket.IO'],
+      liveUrl: '#',
+      githubUrl: '#',
+      year: '2025',
+      status: 'Popular',
+      category: 'Community',
+      stats: { users: '5.2K', rating: 4.7, growth: '+38%' },
+      featured: false,
+    },
     // {
     //   title: 'SmartFinance - Personal Finance App',
     //   description:

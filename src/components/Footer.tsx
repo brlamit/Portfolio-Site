@@ -25,19 +25,19 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
     {
       name: 'GitHub',
       icon: <Github className="w-5 h-5" />,
-      url: 'https://github.com',
+      url: 'https://github.com/brlamit',
       color: isDarkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'
     },
     {
       name: 'LinkedIn',
       icon: <Linkedin className="w-5 h-5" />,
-      url: 'https://linkedin.com',
+      url: 'https://www.linkedin.com/in/brlamit',
       color: isDarkMode ? 'hover:bg-blue-900/50' : 'hover:bg-blue-100'
     },
     {
       name: 'Email',
       icon: <Mail className="w-5 h-5" />,
-      url: 'mailto:contact@amitbaral.com.np',
+      url: 'mailto:baralamit881@gmail.com',
       color: isDarkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'
     },
   ];
@@ -48,9 +48,9 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
   };
 
   const stats = [
-    { icon: <Code className="w-4 h-4" />, label: "Projects", value: "50+" },
-    { icon: <Coffee className="w-4 h-4" />, label: "Coffee Cups", value: "∞" },
-    { icon: <Star className="w-4 h-4" />, label: "Rating", value: "4.9/5" }
+    // { icon: <Code className="w-4 h-4" />, label: "Projects", value: "5+" },
+    // { icon: <Coffee className="w-4 h-4" />, label: "Coffee Cups", value: "∞" },
+    // { icon: <Star className="w-4 h-4" />, label: "Rating", value: "4.9/5" }
   ];
 
   return (
@@ -167,20 +167,20 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
             }`}>
               <p className="flex items-start">
                 <span className="mr-2">📍</span>
-                Kathmandu, Nepal
+                Pokhara, Nepal
               </p>
               <p className="flex items-start">
                 <span className="mr-2">✉️</span>
-                contact@amitbaral.com.np
+                baralamit881@gmail.com
               </p>
               <p className="flex items-start">
                 <span className="mr-2">📱</span>
-                +977 98XXXXXXXX
+                +977 9867647812
               </p>
-              <p className="flex items-start">
+              {/* <p className="flex items-start">
                 <span className="mr-2">💼</span>
                 XAV Technology
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
@@ -190,7 +190,7 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
           isDarkMode ? 'border-gray-700/50' : 'border-gray-200/50'
         }`}>
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className={`flex items-center space-x-2 mb-4 md:mb-0 ${
+            {/* <div className={`flex items-center space-x-2 mb-4 md:mb-0 ${
               isDarkMode ? 'text-gray-300' : 'text-gray-600'
             }`}>
               <span>Made with</span>
@@ -198,7 +198,7 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
               <span>and</span>
               <Coffee className="w-4 h-4 text-amber-500" />
               <span>in Nepal</span>
-            </div>
+            </div> */}
             
             <div className={`text-center md:text-left mb-4 md:mb-0 ${
               isDarkMode ? 'text-gray-300' : 'text-gray-600'
@@ -224,10 +224,10 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
         </div>
 
         {/* Decorative elements */}
-        <div className={`absolute bottom-4 left-4 w-2 h-2 rounded-full animate-ping opacity-50 ${
+        <div className={`absolute bottom-4 left-4 w-4 h-4 rounded-full animate-ping opacity-50 ${
           isDarkMode ? 'bg-blue-500' : 'bg-blue-600'
         }`}></div>
-        <div className={`absolute top-4 right-4 w-1.5 h-1.5 rounded-full animate-ping delay-1000 opacity-30 ${
+        <div className={`absolute top-4 right-4 w-3 h-3 rounded-full animate-ping delay-1000 opacity-30 ${
           isDarkMode ? 'bg-indigo-500' : 'bg-indigo-600'
         }`}></div>
       </div>
