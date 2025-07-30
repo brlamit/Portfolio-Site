@@ -1,6 +1,7 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, MessageCircle, Clock, CheckCircle } from 'lucide-react';
-// import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 
 interface ContactProps {
   isDarkMode: boolean;
@@ -16,10 +17,12 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errors, setErrors] = useState({ name: '', email: '', subject: '', message: '' });
   const sectionRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
+    emailjs.init('TQSFQCRdF50CNGhl4');
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -36,24 +39,55 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
     return () => observer.disconnect();
   }, []);
 
+  const validateForm = () => {
+    const newErrors = { name: '', email: '', subject: '', message: '' };
+    let isValid = true;
+
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+      isValid = false;
+    }
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+      isValid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Invalid email format';
+      isValid = false;
+    }
+    if (!formData.subject.trim()) {
+      newErrors.subject = 'Subject is required';
+      isValid = false;
+    }
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required';
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+    setErrors((prev) => ({
+      ...prev,
+      [name]: '',
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validateForm()) {
+      return;
+    }
     setIsSubmitting(true);
 
     try {
-      await emailjs.sendForm(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
-        formRef.current!,
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
-      );
+      await emailjs.sendForm('service_bcevon8', 'template_0a7hxfk', formRef.current!, 'TQSFQCRdF50CNGhl4');
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
       setTimeout(() => setSubmitStatus('idle'), 3000);
@@ -70,21 +104,21 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: 'Email',
-      value: 'contact@baralamit.com.np',
-      link: 'mailto:contact@baralamit.com.np',
+      value: 'baralamit881@gmail.com',
+      link: 'mailto:baralamit881@gmail.com',
       color: 'from-blue-400 to-cyan-400',
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: 'Phone',
-      value: '+977 98XXXXXXXX',
-      link: 'tel:+977981234567',
+      value: '+977 9867647812',
+      link: 'tel:+9779867647812',
       color: 'from-green-400 to-emerald-400',
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: 'Location',
-      value: 'Kathmandu, Nepal',
+      value: 'Pokhara, Nepal',
       link: '#',
       color: 'from-purple-400 to-pink-400',
     },
@@ -130,8 +164,7 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
       }`}
       ref={sectionRef}
     >
-      {/* Background elements */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
+      <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ zIndex: 0 }}>
         <div
           className={`absolute top-10 left-1/4 w-80 h-80 rounded-full blur-3xl animate-float ${
             isDarkMode ? 'bg-gradient-to-r from-blue-500/20 to-indigo-500/20' : 'bg-gradient-to-r from-blue-200/30 to-indigo-200/30'
@@ -148,9 +181,7 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
           }`}
         ></div>
       </div>
-
-      {/* Particle effects */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
+      <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ zIndex: 0 }}>
         {[...Array(8)].map((_, i) => (
           <div
             key={i}
@@ -166,7 +197,6 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
           ></div>
         ))}
       </div>
-
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div
@@ -209,8 +239,6 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
               Have a project in mind or want to collaborate? I'd love to hear from you. Let's create something amazing together.
             </p>
           </div>
-
-          {/* Quick stats */}
           <div
             className={`grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 transform transition-all duration-1000 ease-out delay-300 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
@@ -245,9 +273,7 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
               </div>
             ))}
           </div>
-
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
             <div
               className={`transform transition-all duration-1000 ease-out delay-500 ${
                 isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
@@ -257,6 +283,7 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
                 className={`backdrop-blur-lg rounded-3xl p-8 border relative overflow-hidden group ${
                   isDarkMode ? 'bg-gray-800/40 border-gray-600/40' : 'bg-white/70 border-gray-200/50'
                 }`}
+                style={{ zIndex: 10 }}
               >
                 <div
                   className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 ${
@@ -264,16 +291,17 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
                       ? 'bg-gradient-to-r from-blue-600/20 to-indigo-600/20'
                       : 'bg-gradient-to-r from-blue-100/50 to-indigo-100/50'
                   }`}
+                  style={{ zIndex: 0 }}
                 ></div>
                 <h3
-                  className={`text-2xl font-bold mb-6 flex items-center tracking-tight ${
+                  className={`text-2xl font-bold mb-6 flex items-center tracking-tight relative z-10 ${
                     isDarkMode ? 'text-white' : 'text-gray-900'
                   }`}
                 >
                   <Send className="w-6 h-6 mr-3 animate-pulse" />
                   Send Message
                 </h3>
-                <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+                <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 relative z-10">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label
@@ -293,10 +321,11 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
                         required
                         className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder-gray-400 focus:shadow-md ${
                           isDarkMode ? 'bg-gray-700/50 border-gray-600 text-white' : 'bg-white border-gray-300 text-gray-900'
-                        }`}
+                        } ${errors.name ? 'border-red-500' : ''}`}
                         placeholder="Your name"
                         aria-required="true"
                       />
+                      {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
                     </div>
                     <div>
                       <label
@@ -316,10 +345,11 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
                         required
                         className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder-gray-400 focus:shadow-md ${
                           isDarkMode ? 'bg-gray-700/50 border-gray-600 text-white' : 'bg-white border-gray-300 text-gray-900'
-                        }`}
+                        } ${errors.email ? 'border-red-500' : ''}`}
                         placeholder="your@email.com"
                         aria-required="true"
                       />
+                      {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                     </div>
                   </div>
                   <div>
@@ -340,10 +370,11 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
                       required
                       className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder-gray-400 focus:shadow-md ${
                         isDarkMode ? 'bg-gray-700/50 border-gray-600 text-white' : 'bg-white border-gray-300 text-gray-900'
-                      }`}
+                        } ${errors.subject ? 'border-red-500' : ''}`}
                       placeholder="Project inquiry"
                       aria-required="true"
                     />
+                    {errors.subject && <p className="text-red-500 text-sm mt-1">{errors.subject}</p>}
                   </div>
                   <div>
                     <label
@@ -363,10 +394,11 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
                       rows={6}
                       className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none placeholder-gray-400 focus:shadow-md ${
                         isDarkMode ? 'bg-gray-700/50 border-gray-600 text-white' : 'bg-white border-gray-300 text-gray-900'
-                      }`}
+                      } ${errors.message ? 'border-red-500' : ''}`}
                       placeholder="Tell me about your project..."
                       aria-required="true"
                     ></textarea>
+                    {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
                   </div>
                   <button
                     type="submit"
@@ -405,8 +437,6 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
                 </form>
               </div>
             </div>
-
-            {/* Contact Information */}
             <div
               className={`space-y-8 transform transition-all duration-1000 ease-out delay-700 ${
                 isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
@@ -428,7 +458,6 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
                   Feel free to reach out through any of these channels. I typically respond within 24 hours and I'm always excited to discuss new opportunities.
                 </p>
               </div>
-
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="group">
@@ -464,19 +493,18 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
                   </div>
                 ))}
               </div>
-
               <div
                 className={`pt-8 border-t ${
                   isDarkMode ? 'border-gray-600/40' : 'border-gray-200/50'
                 }`}
               >
-                <h4
+                <h3
                   className={`font-semibold mb-4 tracking-tight ${
                     isDarkMode ? 'text-white' : 'text-gray-900'
                   }`}
                 >
                   Follow Me
-                </h4>
+                </h3>
                 <div className="flex space-x-4">
                   {socialLinks.map((social, index) => (
                     <a
@@ -494,7 +522,6 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
                   ))}
                 </div>
               </div>
-
               <div
                 className={`rounded-3xl p-6 border relative overflow-hidden ${
                   isDarkMode
@@ -506,6 +533,7 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
                   className={`absolute inset-0 opacity-10 animate-shimmer ${
                     isDarkMode ? 'bg-gradient-to-r from-blue-600/20 to-indigo-600/20' : 'bg-gradient-to-r from-blue-400/20 to-indigo-400/20'
                   }`}
+                  style={{ zIndex: 0 }}
                 ></div>
                 <div
                   className={`absolute top-4 right-4 w-2 h-2 rounded-full animate-ping opacity-50 ${

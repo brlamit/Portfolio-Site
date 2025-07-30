@@ -7,4 +7,13 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  server: {
+    proxy: {
+      '/api/emailjs': {
+        target: 'https://api.emailjs.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/emailjs/, ''),
+      },
+    },
+  },
 });
