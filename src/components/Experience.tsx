@@ -27,57 +27,57 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
   }, []);
 
   const experiences = [
-    {
-      title: 'Laravel Developer',
-      company: 'XAV Technology',
-      location: 'Kathmandu, Nepal',
-      duration: '2022 - Present',
-      type: 'Full-time',
-      description:
-        'Currently developing robust web applications using Laravel framework, implementing RESTful APIs, and collaborating with cross-functional teams to deliver high-quality software solutions for diverse clients.',
-      achievements: [
-        'Building and maintaining Laravel applications serving thousands of users',
-        'Implementing modern PHP practices and clean architecture patterns',
-        'Developing RESTful APIs and integrating third-party services',
-        'Collaborating with frontend developers and designers for seamless user experiences',
-      ],
-      technologies: ['Laravel', 'PHP', 'MySQL', 'Vue.js', 'JavaScript', 'Git'],
-      current: true,
-    },
-    {
-      title: 'Web Developer',
-      company: 'Freelance Projects',
-      location: 'Remote',
-      duration: '2021 - 2022',
-      type: 'Freelance',
-      description:
-        'Provided web development services to small businesses and startups. Specialized in Laravel development, custom PHP solutions, and responsive web design using modern technologies.',
-      achievements: [
-        'Completed 15+ freelance projects with excellent client satisfaction',
-        'Built custom web applications and e-commerce solutions',
-        'Established expertise in Laravel framework and PHP development',
-        'Developed responsive designs and user-friendly interfaces',
-      ],
-      technologies: ['Laravel', 'PHP', 'HTML', 'CSS', 'JavaScript', 'MySQL'],
-      current: false,
-    },
-    {
-      title: 'Junior Developer',
-      company: 'Local Tech Company',
-      location: 'Kathmandu, Nepal',
-      duration: '2020 - 2021',
-      type: 'Full-time',
-      description:
-        'Started career as a junior developer working on various web projects. Gained foundational experience in PHP, web development, and modern development practices while contributing to team projects.',
-      achievements: [
-        'Contributed to multiple web development projects',
-        'Learned Laravel framework and modern PHP development',
-        'Gained experience in database design and optimization',
-        'Developed skills in version control and team collaboration',
-      ],
-      technologies: ['PHP', 'HTML', 'CSS', 'JavaScript', 'MySQL', 'Bootstrap'],
-      current: false,
-    },
+    // {
+    //   title: 'Laravel Developer',
+    //   company: 'XAV Technology',
+    //   location: 'Kathmandu, Nepal',
+    //   duration: '2022 - Present',
+    //   type: 'Full-time',
+    //   description:
+    //     'Currently developing robust web applications using Laravel framework, implementing RESTful APIs, and collaborating with cross-functional teams to deliver high-quality software solutions for diverse clients.',
+    //   achievements: [
+    //     'Building and maintaining Laravel applications serving thousands of users',
+    //     'Implementing modern PHP practices and clean architecture patterns',
+    //     'Developing RESTful APIs and integrating third-party services',
+    //     'Collaborating with frontend developers and designers for seamless user experiences',
+    //   ],
+    //   technologies: ['Laravel', 'PHP', 'MySQL', 'Vue.js', 'JavaScript', 'Git'],
+    //   current: true,
+    // },
+    // {
+    //   title: 'Web Developer',
+    //   company: 'Freelance Projects',
+    //   location: 'Remote',
+    //   duration: '2021 - 2022',
+    //   type: 'Freelance',
+    //   description:
+    //     'Provided web development services to small businesses and startups. Specialized in Laravel development, custom PHP solutions, and responsive web design using modern technologies.',
+    //   achievements: [
+    //     'Completed 15+ freelance projects with excellent client satisfaction',
+    //     'Built custom web applications and e-commerce solutions',
+    //     'Established expertise in Laravel framework and PHP development',
+    //     'Developed responsive designs and user-friendly interfaces',
+    //   ],
+    //   technologies: ['Laravel', 'PHP', 'HTML', 'CSS', 'JavaScript', 'MySQL'],
+    //   current: false,
+    // },
+    // {
+    //   title: 'Junior Developer',
+    //   company: 'Local Tech Company',
+    //   location: 'Kathmandu, Nepal',
+    //   duration: '2020 - 2021',
+    //   type: 'Full-time',
+    //   description:
+    //     'Started career as a junior developer working on various web projects. Gained foundational experience in PHP, web development, and modern development practices while contributing to team projects.',
+    //   achievements: [
+    //     'Contributed to multiple web development projects',
+    //     'Learned Laravel framework and modern PHP development',
+    //     'Gained experience in database design and optimization',
+    //     'Developed skills in version control and team collaboration',
+    //   ],
+    //   technologies: ['PHP', 'HTML', 'CSS', 'JavaScript', 'MySQL', 'Bootstrap'],
+    //   current: false,
+    // },
   ];
 
   const education = [

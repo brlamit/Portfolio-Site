@@ -59,62 +59,62 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
       stats: { users: '1.8K', rating: 4.9, growth: '+62%' },
       featured: true,
     },
-    {
-      title: 'NepalTech - Tech Community Platform',
-      description:
-        'Social platform connecting tech professionals in Nepal. Built with Laravel, features job board, event management, mentorship matching, and knowledge sharing forums with real-time chat.',
-      image: 'https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['Laravel', 'React', 'MySQL', 'WebSocket', 'Bootstrap'],
-      liveUrl: '#',
-      githubUrl: '#',
-      year: '2023',
-      status: 'Popular',
-      category: 'Community',
-      stats: { users: '5.2K', rating: 4.7, growth: '+38%' },
-      featured: false,
-    },
-    {
-      title: 'SmartFinance - Personal Finance App',
-      description:
-        'Personal finance management application with Laravel backend API. Features expense tracking, budget planning, investment monitoring, and financial goal setting with AI-powered insights.',
-      image: 'https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['Laravel', 'React Native', 'MySQL', 'Redis', 'Docker'],
-      liveUrl: '#',
-      githubUrl: '#',
-      year: '2022',
-      status: 'Award Winner',
-      category: 'Mobile App',
-      stats: { users: '3.1K', rating: 4.6, growth: '+28%' },
-      featured: false,
-    },
-    {
-      title: 'EduConnect - Online Learning Platform',
-      description:
-        'Comprehensive e-learning platform built with Laravel. Features video streaming, interactive quizzes, progress tracking, certificate generation, and payment integration for educational institutions.',
-      image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['Laravel', 'Vue.js', 'MySQL', 'FFmpeg', 'Stripe'],
-      liveUrl: '#',
-      githubUrl: '#',
-      year: '2022',
-      status: 'Enterprise',
-      category: 'E-Learning',
-      stats: { users: '12K', rating: 4.8, growth: '+85%' },
-      featured: true,
-    },
-    {
-      title: 'WeatherWise - Climate Analytics',
-      description:
-        'Advanced weather analytics platform providing detailed climate data and forecasting models. Built with Laravel backend and React frontend for researchers and meteorologists.',
-      image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['Laravel', 'React', 'PostgreSQL', 'Chart.js', 'OpenWeather API'],
-      liveUrl: '#',
-      githubUrl: '#',
-      year: '2021',
-      status: 'Research',
-      category: 'Analytics',
-      stats: { users: '850', rating: 4.9, growth: '+15%' },
-      featured: false,
-    },
+    // {
+    //   title: 'NepalTech - Tech Community Platform',
+    //   description:
+    //     'Social platform connecting tech professionals in Nepal. Built with Laravel, features job board, event management, mentorship matching, and knowledge sharing forums with real-time chat.',
+    //   image: 'https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=600',
+    //   technologies: ['Laravel', 'React', 'MySQL', 'WebSocket', 'Bootstrap'],
+    //   liveUrl: '#',
+    //   githubUrl: '#',
+    //   year: '2023',
+    //   status: 'Popular',
+    //   category: 'Community',
+    //   stats: { users: '5.2K', rating: 4.7, growth: '+38%' },
+    //   featured: false,
+    // },
+    // {
+    //   title: 'SmartFinance - Personal Finance App',
+    //   description:
+    //     'Personal finance management application with Laravel backend API. Features expense tracking, budget planning, investment monitoring, and financial goal setting with AI-powered insights.',
+    //   image: 'https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=600',
+    //   technologies: ['Laravel', 'React Native', 'MySQL', 'Redis', 'Docker'],
+    //   liveUrl: '#',
+    //   githubUrl: '#',
+    //   year: '2022',
+    //   status: 'Award Winner',
+    //   category: 'Mobile App',
+    //   stats: { users: '3.1K', rating: 4.6, growth: '+28%' },
+    //   featured: false,
+    // },
+    // {
+    //   title: 'EduConnect - Online Learning Platform',
+    //   description:
+    //     'Comprehensive e-learning platform built with Laravel. Features video streaming, interactive quizzes, progress tracking, certificate generation, and payment integration for educational institutions.',
+    //   image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600',
+    //   technologies: ['Laravel', 'Vue.js', 'MySQL', 'FFmpeg', 'Stripe'],
+    //   liveUrl: '#',
+    //   githubUrl: '#',
+    //   year: '2022',
+    //   status: 'Enterprise',
+    //   category: 'E-Learning',
+    //   stats: { users: '12K', rating: 4.8, growth: '+85%' },
+    //   featured: true,
+    // },
+    // {
+    //   title: 'WeatherWise - Climate Analytics',
+    //   description:
+    //     'Advanced weather analytics platform providing detailed climate data and forecasting models. Built with Laravel backend and React frontend for researchers and meteorologists.',
+    //   image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=600',
+    //   technologies: ['Laravel', 'React', 'PostgreSQL', 'Chart.js', 'OpenWeather API'],
+    //   liveUrl: '#',
+    //   githubUrl: '#',
+    //   year: '2021',
+    //   status: 'Research',
+    //   category: 'Analytics',
+    //   stats: { users: '850', rating: 4.9, growth: '+15%' },
+    //   featured: false,
+    // },
   ];
 
   const filters = ['All', 'Featured', 'Web App', 'SaaS', 'Mobile App', 'E-Learning', 'Community', 'Analytics'];
@@ -482,7 +482,7 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                   Check out my GitHub for more projects and contributions to the Laravel community
                 </p>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/brlamit"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-xl"
