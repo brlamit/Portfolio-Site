@@ -142,7 +142,7 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
     {
       name: 'Twitter',
       icon: <Twitter className="w-6 h-6" />,
-      url: 'https://twitter.com/baralamit',
+      url: 'https://twitter.com/brlamit',
       color: 'hover:text-cyan-400',
       bgColor: isDarkMode ? 'hover:bg-cyan-900/30' : 'hover:bg-cyan-100/80',
     },
@@ -522,8 +522,6 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
                   ))}
                 </div>
               </div>
-              
-           
             </div>
           </div>
         </div>
