@@ -85,7 +85,7 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
               isDarkMode ? 'text-gray-300' : 'text-gray-600'
             }`}>
               Laravel Developer & Full Stack Engineer passionate about creating 
-              digital solutions that make a difference. Currently crafting robust applications at XAV Technology.
+              digital solutions that make a difference.
             </p>
             
             {/* Quick stats */}

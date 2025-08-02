@@ -522,6 +522,7 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
                   ))}
                 </div>
               </div>
+             
             </div>
           </div>
         </div>
