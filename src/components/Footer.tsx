@@ -40,6 +40,12 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
       url: 'mailto:baralamit881@gmail.com',
       color: isDarkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'
     },
+    {
+      name: 'Facebook',
+      icon: <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.35c0 .732.593 1.325 1.325 1.325h11.494v-9.294h-3.125v-3.625h3.125v-2.675c0-3.075 1.875-4.75 4.625-4.75 1.312 0 2.438.098 2.775.142v3.225l-1.9-.001c-1.488 0-1.775.707-1.775 1.775v2.325h3.55l-.463 3.625h-3.087v9.294h6.062c.732 0 1.325-.593 1.325-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>,
+      url: 'https://www.facebook.com/amit.baral.239082/',
+      color: isDarkMode ? 'hover:bg-blue-800/50' : 'hover:bg-blue-200'
+    }
   ];
 
   const scrollToSection = (href: string) => {

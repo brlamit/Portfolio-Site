@@ -9,6 +9,7 @@ import {
   Server,
   Download,
   ArrowRight,
+  Facebook,
 } from 'lucide-react';
 import profileimg from '../assets/myimage.jpg';
 import { motion } from 'framer-motion';
@@ -47,6 +48,7 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
     { Icon: Github, href: 'https://github.com/brlamit', label: 'GitHub', delay: 0 },
     { Icon: Linkedin, href: 'https://www.linkedin.com/in/brlamit', label: 'LinkedIn', delay: 200 },
     { Icon: Mail, href: 'mailto:baralamit881@gmail.com', label: 'Email', delay: 400 },
+    { Icon: Facebook, href: 'https://www.facebook.com/amit.baral.239082/', label: 'Facebook', delay: 600 },
   ];
 
   return (
