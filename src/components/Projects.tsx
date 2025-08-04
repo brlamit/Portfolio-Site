@@ -3,6 +3,7 @@ import { ExternalLink, Github, Calendar, Star, TrendingUp, Users, Award, Zap, Ey
 import dacademe from '../assets/dacademe.png'; // Correct path for the image
 import ecommerse from '../assets/ecommerse.png'; // Correct path for the image
 import weather from '../assets/weather.png'; // Correct path for the image
+import dashboard from '../assets/junkyard.png'; // Correct path for the image
 
 interface ProjectsProps {
   isDarkMode: boolean;
@@ -74,20 +75,20 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
       stats: { users: '5.2K', rating: 4.7, growth: '+38%' },
       featured: false,
     },
-    // {
-    //   title: 'SmartFinance - Personal Finance App',
-    //   description:
-    //     'Personal finance management application with Laravel backend API. Features expense tracking, budget planning, investment monitoring, and financial goal setting with AI-powered insights.',
-    //   image: 'https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=600',
-    //   technologies: ['Laravel', 'React Native', 'MySQL', 'Redis', 'Docker'],
-    //   liveUrl: '#',
-    //   githubUrl: '#',
-    //   year: '2022',
-    //   status: 'Award Winner',
-    //   category: 'Mobile App',
-    //   stats: { users: '3.1K', rating: 4.6, growth: '+28%' },
-    //   featured: false,
-    // },
+    {
+      title: 'JMS - Junkyard Management System',
+      description:
+        'Junkyard management system for tracking and managing junkyard inventory. Built with .Net, it features real-time inventory updates, user authentication, and a responsive design.',
+      image: dashboard,
+      technologies: ['.Net', 'MySQL', 'Git'],
+      // liveUrl: '#',
+      githubUrl: 'https://github.com/brlamit/JMS_Project',
+      year: '2023',
+      // status: 'Award Winner',
+      category: 'Desktop App',
+      stats: { users: '3.1K', rating: 4.6, growth: '+28%' },
+      featured: false,
+    },
     // {
     //   title: 'EduConnect - Online Learning Platform',
     //   description:
