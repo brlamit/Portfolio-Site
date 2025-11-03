@@ -118,7 +118,7 @@ const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
   ];
 
   return (
-    <section id="skills" className={`py-20 relative overflow-hidden transition-colors duration-300 ${
+    <section id="skills" className={`py-12 md:py-20 relative overflow-hidden transition-colors duration-300 ${
       isDarkMode ? 'bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800' : 'bg-gradient-to-br from-gray-50 via-white to-blue-50'
     }`} ref={sectionRef}>
       {/* Animated background */}
@@ -135,7 +135,7 @@ const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
       </div>
 
       {/* Floating tech icons */}
-      <div className="absolute inset-0 pointer-events-none">
+  <div className="absolute inset-0 pointer-events-none hidden sm:block">
         {technologies.map((tech, index) => (
           <div
             key={index}
@@ -151,7 +151,7 @@ const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
       </div>
 
       {/* Geometric patterns */}
-      <div className="absolute inset-0 pointer-events-none opacity-5">
+  <div className="absolute inset-0 pointer-events-none opacity-5 hidden sm:block">
         <div className={`absolute top-20 right-20 w-8 h-8 border-2 rotate-45 animate-spin-slow ${
           isDarkMode ? 'border-blue-500' : 'border-blue-600'
         }`}></div>
@@ -163,7 +163,7 @@ const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
         }`}></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className={`text-center mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <div className={`inline-flex items-center space-x-2 px-4 py-2 rounded-full text-sm font-medium mb-6 border ${
@@ -174,7 +174,7 @@ const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
               <Code className="w-4 h-4" />
               <span>Technical Expertise</span>
             </div>
-            <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${
+            <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-6 ${
               isDarkMode ? 'text-white' : 'text-gray-900'
             }`}>
               Skills & <span className={`text-transparent bg-clip-text ${
@@ -192,11 +192,11 @@ const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
           </div>
 
           {/* Skill categories */}
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
             {skillCategories.map((category, categoryIndex) => (
               <div 
                 key={categoryIndex}
-                className={`group ${category.bgColor} backdrop-blur-sm rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up relative overflow-hidden border ${
+                className={`group ${category.bgColor} backdrop-blur-sm rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up relative overflow-hidden border ${
                   isDarkMode ? 'border-gray-600/50' : 'border-gray-200/50'
                 }`}
                 style={{ animationDelay: `${categoryIndex * 200}ms` }}
@@ -213,7 +213,7 @@ const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
                   </div>
                 </div>
                 
-                <h3 className={`text-xl font-bold mb-6 text-center group-hover:text-blue-600 transition-colors duration-300 relative z-10 ${
+                <h3 className={`text-lg md:text-xl font-bold mb-6 text-center group-hover:text-blue-600 transition-colors duration-300 relative z-10 ${
                   isDarkMode ? 'text-white' : 'text-gray-900'
                 }`}>
                   {category.title}
@@ -224,7 +224,7 @@ const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
                     <div key={skillIndex} className="skill-item">
                       <div className="flex justify-between mb-3">
                         <span className={`font-medium group-hover:text-blue-600 transition-colors duration-300 ${
-                          isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                          isDarkMode ? 'text-gray-300 text-sm md:text-base' : 'text-gray-700 text-sm md:text-base'
                         }`}>
                           {skill.name}
                         </span>
@@ -236,11 +236,11 @@ const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
                       </div>
                       
                       <div className="relative">
-                        <div className={`w-full rounded-full h-3 overflow-hidden ${
+                        <div className={`w-full rounded-full h-2 md:h-3 overflow-hidden ${
                           isDarkMode ? 'bg-gray-700/50' : 'bg-gray-200'
                         }`}>
                           <div 
-                            className={`skill-bar h-3 rounded-full ${skill.color} transition-all duration-1000 ease-out relative overflow-hidden`}
+                            className={`skill-bar h-2 md:h-3 rounded-full ${skill.color} transition-all duration-1000 ease-out relative overflow-hidden`}
                             style={{ width: isVisible ? `${skill.level}%` : '0%' }}
                           >
                             {/* Shimmer effect */}
@@ -251,8 +251,9 @@ const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
                         </div>
                         
                         {/* Skill level indicator */}
+                        {/* Skill level indicator */}
                         <div 
-                          className={`absolute top-0 w-4 h-4 rounded-full shadow-lg transform -translate-y-0.5 transition-all duration-1000 ease-out border-2 ${
+                          className={`absolute top-1/2 w-4 h-4 rounded-full shadow-lg transform -translate-y-1/2 transition-all duration-1000 ease-out border-2 ${
                             isDarkMode ? 'bg-white border-gray-300' : 'bg-white border-gray-400'
                           }`}
                           style={{ left: isVisible ? `calc(${skill.level}% - 8px)` : '-8px' }}
@@ -329,29 +330,7 @@ const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
               }`}>Achievements</span>
             </h3> */}
             <div className="grid md:grid-cols-3 gap-8">
-              {[
-                // { 
-                //   name: "Laravel", 
-                //   cert: "Certified Laravel Developer", 
-                //   color: "from-red-500 to-orange-500", 
-                //   icon: <Server className="w-8 h-8" />,
-                //   badge: "Expert Level"
-                // },
-                // { 
-                //   name: "AWS", 
-                //   cert: "Cloud Practitioner", 
-                //   color: "from-yellow-500 to-orange-500", 
-                //   icon: <Cloud className="w-8 h-8" />,
-                //   badge: "Certified"
-                // },
-                // { 
-                //   name: "PHP", 
-                //   cert: "Advanced PHP Developer", 
-                //   color: "from-purple-500 to-blue-500", 
-                //   icon: <Code className="w-8 h-8" />,
-                //   badge: "Advanced"
-                // }
-              ].map((cert, index) => (
+              {([] as any[]).map((cert, index) => (
                 <div 
                   key={index}
                   className={`group backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up relative overflow-hidden border ${
