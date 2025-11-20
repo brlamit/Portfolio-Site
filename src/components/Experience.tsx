@@ -31,7 +31,7 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
       title: 'Laravel Developer',
       company: 'XAV Technology',
       location: 'Pokhara, Nepal',
-      duration: '2025 - Present',
+      duration: 'Feburary-2025 - September-2025',
       type: 'Full-time',
       description:
         'Currently developing robust web applications using Laravel framework, implementing RESTful APIs, and collaborating with cross-functional teams to deliver high-quality software solutions for diverse clients.',
