@@ -7,6 +7,7 @@ import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Ad from './components/Ad';
 
 function App() {
   // Initialize isDarkMode to true for dark mode by default
@@ -36,12 +37,21 @@ function App() {
       <Header isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <main>
         <Hero isDarkMode={isDarkMode} />
+        <div className="flex justify-center py-8">
+          <Ad slot="3617316306" className="max-w-md" isDarkMode={isDarkMode} />
+        </div>
         <About isDarkMode={isDarkMode} />
         <Skills isDarkMode={isDarkMode} />
         <Projects isDarkMode={isDarkMode} />
+        <div className="flex justify-center py-8">
+          <Ad slot="7899982721" className="max-w-lg" isDarkMode={isDarkMode} />
+        </div>
         <Experience isDarkMode={isDarkMode} />
         <Contact isDarkMode={isDarkMode} />
       </main>
+      <div className="flex justify-center py-8">
+        <Ad slot="7297347495" className="max-w-md" isDarkMode={isDarkMode} />
+      </div>
       <Footer isDarkMode={isDarkMode} />
     </div>
   );
