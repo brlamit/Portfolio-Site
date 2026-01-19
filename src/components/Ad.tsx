@@ -16,27 +16,22 @@ const Ad: React.FC<AdProps> = ({
   isDarkMode = false
 }) => {
   useEffect(() => {
-    // Load AdSense script if not already loaded
-    if (!document.querySelector('script[src*="adsbygoogle.js"]')) {
-      const script = document.createElement('script');
-      script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8523398566125571';
-      script.async = true;
-      script.crossOrigin = 'anonymous';
-      document.head.appendChild(script);
+    // AdSense script is loaded in index.html <head>; just initialize ads
+    try {
+      (window as any).adsbygoogle = (window as any).adsbygoogle || [];
+      (window as any).adsbygoogle.push({});
+    } catch (e) {
+      // If script not yet available, retry shortly
+      const retry = () => {
+        try {
+          (window as any).adsbygoogle = (window as any).adsbygoogle || [];
+          (window as any).adsbygoogle.push({});
+        } catch (err) {
+          // ignore
+        }
+      };
+      setTimeout(retry, 250);
     }
-
-    // Initialize ads after script loads
-    const initAds = () => {
-      try {
-        (window as any).adsbygoogle = (window as any).adsbygoogle || [];
-        (window as any).adsbygoogle.push({});
-      } catch (e) {
-        console.error('AdSense error:', e);
-      }
-    };
-
-    // Small delay to ensure script is loaded
-    setTimeout(initAds, 100);
   }, []);
 
   return (
