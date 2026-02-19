@@ -35,7 +35,7 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
 
   const projects = [
     {
-      title: 'FinTrack - Sustainability Dashboard',
+      title: 'FinTrack - Personal Finance Management',
       description:
         'FinTrack is a personal finance management platform that I designed and developed to help users track expenses, manage budgets, and gain better financial insights.',
       image: fintrack,
