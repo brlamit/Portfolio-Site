@@ -4,6 +4,7 @@ import dacademe from '../assets/dacademe.png'; // Correct path for the image
 import ecommerse from '../assets/ecommerse.png'; // Correct path for the image
 import weather from '../assets/weather.png'; // Correct path for the image
 import dashboard from '../assets/junkyard.png'; // Correct path for the image
+import fintrack from '../assets/fintrack.png'; // Correct path for the image
 
 interface ProjectsProps {
   isDarkMode: boolean;
@@ -33,6 +34,20 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
   }, []);
 
   const projects = [
+    {
+      title: 'FinTrack - Sustainability Dashboard',
+      description:
+        'FinTrack is a personal finance management platform that I designed and developed to help users track expenses, manage budgets, and gain better financial insights.',
+      image: fintrack,
+      technologies: [ 'Laravel', 'PHP',  'PostgreSQL', 'Git','Tailwind', 'Docker', 'Supabase'],
+      liveUrl: 'https://fintrack.baralamit.com.np/',
+      githubUrl: 'https://github.com/brlamit/D-Academe',
+      year: '2026',
+      status: 'Featured',
+      category: 'Web App',
+      stats: { users: '2.5K', rating: 4.8, growth: '+45%' },
+      featured: true,
+    },
     {
       title: 'D-ACADEME - Sustainability Dashboard',
       description:
