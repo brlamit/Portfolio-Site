@@ -14,7 +14,7 @@ import {
 import profileimg from '../assets/myimage.jpg';
 import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
-import amitbaralcv from '../assets/CV-Amit-Baral.pdf';
+import amitbaralcv from '../assets/amit_baral_resume.pdf';
 
 interface HeroProps {
   isDarkMode: boolean;
